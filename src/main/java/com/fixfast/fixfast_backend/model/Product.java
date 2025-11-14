@@ -1,16 +1,10 @@
-package com.fixfast.fixfast_backend.model; // Paquete ajustado
+package com.fixfast.fixfast_backend.model;
 
-import jakarta.persistence.*; 
-import lombok.Data; 
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "productos")
-@Data   
-@NoArgsConstructor // Añadido: Constructor sin argumentos
-@AllArgsConstructor // Añadido: Constructor con todos los argumentos
-public class Product { // Nombre de clase ajustado
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,4 +19,23 @@ public class Product { // Nombre de clase ajustado
     private Integer stockActual;
 
     private String proveedor;
+
+    public Product() {}
+
+    // GETTERS & SETTERS
+
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+
+    public Double getPrecioUnitario() { return precioUnitario; }
+    public void setPrecioUnitario(Double precioUnitario) { this.precioUnitario = precioUnitario; }
+
+    public Integer getStockActual() { return stockActual; }
+    public void setStockActual(Integer stockActual) { this.stockActual = stockActual; }
+
+    public String getProveedor() { return proveedor; }
+    public void setProveedor(String proveedor) { this.proveedor = proveedor; }
 }
